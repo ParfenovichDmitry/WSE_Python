@@ -2,19 +2,19 @@
 ## You should always use camelCase for class names, snake_case for everything else in Python (you could to use UPPER_CASE_SNAKE for constants).
 ############ Zmienne; typ prosty (klasy): string, integer, float,double, bool ###############
 # print('Hello world')
-
+#
 # var_string = 'mercedes'
 # print(type(var_string)) # funkcja type sprawdzenie typu zmiennej
-
+#
 # var_bool = True
 # print(type(var_bool))
-
+#
 # var_integer = 1
 # print(type(var_integer))
-
+#
 # var_float = 2.2324234
 # print(type(var_float))
-
+#
 # var_float = 2.2324234
 # print(type(var_float))
 
@@ -121,6 +121,32 @@
 # posortuj obiekty w liście, usuń ostatni element z listy
 # utwórz nową listę z 3 imionami i dołącz do listy
 
+print("Zadanie 1")
+print()
+list_name =['Anna', 'Magdalena', 'Rafał', 'Michał', 'Anna', 'Alex', 'Alex', 'Martin',
+            'Roman', 'Adam']
+print('Podaj imię')
+user_name = input()
+if user_name in list_name:
+    print('Pirwszy index: \n',list_name.index(user_name))
+    print('Ilość imion: \n',list_name.count(user_name))
+    list_name.append(user_name)
+else:
+    list_name.append(user_name)
+print('Dodanie do końca listy: \n', list_name)
+print('Dołącz nowe imię jako 3 pozycję')
+list_name.insert(2,input())
+print('Imię na 3 pozycję: \n',list_name)
+list_name.sort()
+print('Sortowanie tablicy: \n', list_name)
+print('Usunieńcie ostatniego elementu: ',list_name.pop(len(list_name)-1))
+print(list_name)
+
+nowa_lista = ['Piotr', 'Aga', 'Lech']
+print('Nowa lista:\n', nowa_lista)
+list_name.extend(nowa_lista)
+print('List ogólny: \n', list_name)
+print("_______________________________________________________")
 
 # # ################# Klasa: Krotka (Tuple)
 # print('To moja pierwsza krotka')
@@ -168,6 +194,28 @@
 #     'Spain': 'Seat'
 #    })
 # print(cars_countries)
+print()
+print("Zaadanie 2")
+print()
+osoby = {
+    'imię':['Anna','Lena', 'Piotr'],
+    'nazwisko':['Lech','Ivanova','Petrov'],
+    'wiek':[18,25,34]
+}
+print('List osob: \n',osoby.items())
+osoby.update(
+    {'kraj':['Polska','Rosja','Bełarus'],
+     'miasto':['Warszawa','Moskwa','Mińsk'],
+     'telefon':[1234567,4897978,798894]}
+)
+print('Modyfikowany list osób:\n', osoby)
+print("Wprowadź numer użytkownika od 1 do 3")
+i=int(input())
+for key in osoby:
+   print(osoby[key][i-1], end=" ")
+print()
+
+print("__________________________________________________")
 
 ######################Zadanie 3
 # Do poprzednio utworzonego słownika dodaj nowy klucz o nazwie "kierunek_studiów", wartość w/w klucza dowolna
@@ -221,15 +269,29 @@
 ## b) Jakie elementy/geny są wspólne dla 2 pacjentów?
 ## c) Jakie elementy/geny występują wyłącznie w przypadku 1 choroby?
 
-# set_gene1 = set(['SLC19A2', 'ATP7B', 'ERBB3', 'FGFR4', 'ABCC3','GALNT14', 'ERCC1',
-#                 'LJS19A2', 'AKM7B', 'ELLB34', 'FULR4', 'ANGC3', 'WELNT14', 'EOO1',
-#                 'SAC19A22', 'AAAP7B', 'ERB3', 'FGR4', 'ACC3', 'GASNT14', 'ERSS4'])
-# set_gene2 = set(['SLC19A3', 'ATP7B', 'ERBB3', 'FGFR4', 'ABCC3','GALNT14', 'ERCC1',
-#                 'LJS19A2', 'AKM7B', 'ELLB32', 'FULR421', 'ANGC3', 'WELNT14', 'EOO11',
-#                 'SAC19A2', 'AAAP7B', 'ERB3', 'FGR4', 'ACC3', 'GASNT14', 'ERSS4'])
-# set_gene3 = set(['SLC19A3', 'ATP7B1', 'ERBB32', 'FGFR4', 'ABCC3','GALNT14', 'ERCC11',
-#                 'LJS19A2', 'AKM7B', 'ELLB34', 'FULR4', 'ANGC3', 'WELNT15', 'EOO1',
-#                 'SAC19A22', 'AAP7B', 'ERBB3', 'FGR4', 'ACC4', 'GASNT14', 'ERSS4'])
+set_gene1 = set(['SLC19A2', 'ATP7B', 'ERBB3', 'FGFR4', 'ABCC3','GALNT14', 'ERCC1',
+                'LJS19A2', 'AKM7B', 'ELLB34', 'FULR4', 'ANGC3', 'WELNT14', 'EOO1',
+                'SAC19A22', 'AAAP7B', 'ERB3', 'FGR4', 'ACC3', 'GASNT14', 'ERSS4'])
+set_gene2 = set(['SLC19A3', 'ATP7B', 'ERBB3', 'FGFR4', 'ABCC3','GALNT14', 'ERCC1',
+                'LJS19A2', 'AKM7B', 'ELLB32', 'FULR421', 'ANGC3', 'WELNT14', 'EOO11',
+                'SAC19A2', 'AAAP7B', 'ERB3', 'FGR4', 'ACC3', 'GASNT14', 'ERSS4'])
+set_gene3 = set(['SLC19A3', 'ATP7B1', 'ERBB32', 'FGFR4', 'ABCC3','GALNT14', 'ERCC11',
+                'LJS19A2', 'AKM7B', 'ELLB34', 'FULR4', 'ANGC3', 'WELNT15', 'EOO1',
+                'SAC19A22', 'AAP7B', 'ERBB3', 'FGR4', 'ACC4', 'GASNT14', 'ERSS4'])
+print()
+print("Zadanie 3")
+print("Wspólne geny dla wszystkich pacjentów:")
+general_gene=set_gene1.intersection(set_gene2).intersection(set_gene3)
+print(set_gene1.intersection(set_gene2).intersection(set_gene3))
+print("Wspólne geny dla 1go i 3go pacjentów:")
+print(set_gene1.intersection(set_gene3))
+print("Geny chroby 1go pacjenta: ")
+print(set_gene1.difference(general_gene))
+print("Geny chroby 2go pacjenta: ")
+print(set_gene2.difference(general_gene))
+print("Geny chroby 3go pacjenta: ")
+print(set_gene3.difference(general_gene))
+
 
 ######### Operatory porównania lokalnego i globalne
 ####################Przykład
