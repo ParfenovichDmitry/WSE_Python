@@ -17,6 +17,7 @@
 #
 # var_float = 2.2324234
 # print(type(var_float))
+import subprocess
 
 #### przypisanie wielu wartości do wielu zmiennych
 # a, b, c = 1, 2, 1+2
@@ -86,7 +87,7 @@
 # cars.append('Porsche') # na obiekcie o nazwie cars wywołana została metoda o nazwie append
 # print(cars)
 
-#cars = ['Audi', 'BMW', 'Mercedes','BMW']
+# cars = ['Audi', 'BMW', 'Mercedes','BMW']
 # print(cars)
 # cars.insert(2,'Porsche')
 # cars2 = cars
@@ -160,7 +161,7 @@ print("_______________________________________________________")
 # print(dict_empty1)
 # print(type(dict_empty1))
 
-#słownik = {klucz1: wartość klucza1, klucz2: wartość klucza2, itd}
+# słownik = {klucz1: wartość klucza1, klucz2: wartość klucza2, itd}
 # slownik1 = {'wojenne': 'Medal od honor, Call of Duty',
 #            'romans ': 'Romeo i Julia',
 #            'komiksy ': 'Kaczor Donald'}
@@ -194,7 +195,7 @@ print("_______________________________________________________")
 #     'Spain': 'Seat'
 #    })
 # print(cars_countries)
-print()
+# print()
 print("Zaadanie 2")
 print()
 osoby = {
@@ -291,6 +292,7 @@ print("Geny chroby 2go pacjenta: ")
 print(set_gene2.difference(general_gene))
 print("Geny chroby 3go pacjenta: ")
 print(set_gene3.difference(general_gene))
+print("_____________________________________")
 
 
 ######### Operatory porównania lokalnego i globalne
@@ -341,10 +343,19 @@ print(set_gene3.difference(general_gene))
 # ##########Zadanie 2
 # ### Sprawdź czy w poniższym zbiorze występuje gen 'FGFR4' oraz 'FGERA4', jeśli tak to wskaż index
 # ### genu na liście
-#
-# lista_gene1 = ['SLC19A2', 'ATP7B', 'ERBB3', 'FGFR14', 'ABCC3','GALNT14', 'ERCC1',
-#                 'LJS19A2', 'AKM7B', 'ELLB34', 'FULR4', 'ANGC3', 'WELNT14', 'EOO1',
-#                 'SAC19A22', 'FGFR4', 'ERB3', 'FGR4', 'FGFR4', 'GASNT14', 'ERSS4']
+print("Zadanie")
+lista_gene1 = ['SLC19A2', 'ATP7B', 'ERBB3', 'FGFR14', 'ABCC3','GALNT14', 'ERCC1',
+                'LJS19A2', 'AKM7B', 'ELLB34', 'FULR4', 'ANGC3', 'WELNT14', 'EOO1',
+                'SAC19A22', 'FGFR4', 'ERB3', 'FGR4', 'FGFR4', 'GASNT14', 'ERSS4']
+if "FGFR4" in lista_gene1 or "FGERA4" in lista_gene1:
+    for i in range(0, len(lista_gene1)):
+        if lista_gene1[i] == "FGFR4":
+            print("Numer genu FGFR4: ", i)
+        if lista_gene1[i] == "FGERA4":
+            print("Numer genu FGERA4: ",i)
+else:
+    print("Nie ma takich genów")
+print("____________________________________")
 
 ####################Łańcuchy znaków
 ## Zapoznaj się z wybranymi metodami dla typu string
@@ -387,20 +398,186 @@ print(set_gene3.difference(general_gene))
 ## b) zamień całość tekstu na duże litery
 ## c) wstaw poszczególne wyrazy jako elementy listy
 ## d) Ile zdań jest w analizowanym tekście?
+
+
+print("Zadanie  ")
+text = "A co z Emmą? Kryje się na nią jakiś człowiek? " \
+       "Shaunak Khire, współtwórca Stealth, twierdzi, że choć " \
+       "Emma posiada zespół ludzkich trenerów, efekty jej pracy " \
+       "są wyłącznie jej zasługą. Zawsze ciężko będzie laikom korzystającym" \
+       " z tych usług wiedzieć na pewno, czy chodzi o maszynę czy o człowieka. "
+
+print("Słowo \"Emma\" występuje ",text.count("Emma"), "razy.")
+print(text.upper())
+list_text  = text.split(" ")
+print(list_text)
+count = text.count(".")
+count+=text.count("!")
+count+=text.count("?")
+count+=text.count("...")
+print("Iłość zdań w tekście: ",count)
+print("_______________________________________")
+
+
 ## 2. Oblicz wyrażenie 2x+5y   gdzie: x,y to dowolne dwie liczby które podaje użytkownik (w konsoli)
+
+print("Zadanie 2")
+print("Wprowadź x:")
+x = int(input())
+print("Wprowadź x:")
+y = int(input())
+print("2x + 5y =",2*x+5*y)
+print("____________________________________")
+
 ## 3. Wyświetl zdanie "Jestem a b mam c lat studiuję d",
 ##  gdzie : a-imie, a-nazwisko, c-liczba, d-kierunek studiów są dowolne zmienne które podaje użytkownik (wczytywane z klawiatury)
+#
+print("Zadanie 3")
+print("Wprowadż imię")
+a=input()
+print("Wprowadź nazwisko")
+b=input()
+print("Ile lat masz?")
+c=int(input())
+print("Na jakim jest kierunku studyj?")
+d=input()
+print("Jestem", a, b, "mam", c, "lat studiuję", d)
+print("____________________________________________")
+
+
 ## 4. Sprawdź/porównaj czy 1+2+10+20000001+4+347586970885 jest równa 321784560456434534646
+
+print("Zadanie 4")
+
+if 1+2+10+20000001+4+347586970885 == 321784560456434534646:
+    print("Tak")
+else:
+    print("Nie")
+print("___________________________________________")
+
+
 ## 5. Sprawdź czy suma dowolnych dwóch liczb podanych przez użytkownika jest liczbą parzystą czy nieparzystą wyświetl właściwy komunikat
-##   użyj operatora modulo % który zwraca resztę z dzielenia  np. 5%2   czyli 2 reszta 0
+##  użyj operatora modulo % który zwraca resztę z dzielenia  np. 5%2   czyli 2 reszta 0
+
+print("Zadanie 5")
+print("Wprowadź pierwszą liczbę")
+a=int(input())
+print("Wprowadź drugą liczbę")
+b=int(input())
+if (a+b)%2 == 0:
+    print("Summa liczb jest", a+b,"- parzysta")
+else:
+    print("Summa liczb jest", a+b,"- nieparzysta")
+print("____________________________________________")
+
 ## 6. Utwórz prosty kalkulator dla 2 zmiennych podanych przez użytkownika, który obliczy: sumę, różnicę,
 ## iloczyn, iloraz, potęgę tych liczb, nie zapomnij o stosownych komentarzach informacyjnych dla użytkownika.
+print("Zadanie 6")
+print("Wprowadź pierwszą liczbę")
+a=float(input())
+print("Wybierz operacią: +, -, *, /, pot")
+znak = input()
+print("Wprowadź drugą liczbę")
+b=float(input())
+
+
+match znak:
+    case "+": print(a,"+",b, "=",a+b)
+    case "-": print(a,"-",b, "=",a-b)
+    case "*": print(a,"*",b, "=",a*b)
+    case "/":
+        if b != 0:
+            print(a,"/",b, "=",a/b)
+        else:
+            print("Nie wolno dzielić na 0")
+    case "pot": print(a,"**",b, "=",a**b)
+print("______________________________________")
+
+
 ## 7. Dla dowolnego x sprawdź wynik działań (x > 1 and x < 13) oraz (x != 5 or x < 0)
+print("Zadanie 7")
+print("Wprowadź x")
+x=int(input())
+if 1<x<13 and (x!=5 or x < 0):
+    print("X jest zgodny z warumkami")
+else:
+    print("X nie jest zgodny z warumkami")
+print("_____________________________________________")
+
+
 # Zadania dodatkowe:
-# 1. Wykonaj mini ankietę tj. poproś użytkownika o następujące informacje: imie, nazwisko, wiek, zadaj mu pytania: "Czy zdrowo się odżywiasz?",
+# 1. Wykonaj mini ankietę tj. poproś użytkownika o następujące informacje: imie, nazwisko, wiek, zadaj mu pytania:
+# "Czy zdrowo się odżywiasz?",
 # , "Czy lubisz sport?" i dodatkowo 3 inne własne. Po uzyskaniu wszystkich odpowiedzi wyświetl ich podsumowanie.
+
+print("Zadanie dodatkowe 1")
+print("Wprowadż imię")
+imie = input()
+print("Wprowadż nazwisko")
+nazwisko = input()
+print("Wprowadż  wiek")
+wiek = int(input())
+pytania = [
+    'Czy zdrowo się odżywiasz?',
+    'Czy lubisz sport?',
+    'Czy palisz?',
+    'Czy lubisz pływać?',
+    'Czy chcesz pracować?'
+]
+odpowiedzi = []
+for i in pytania:
+    print(i)
+    odpowiedzi.append(input())
+
+print(imie, nazwisko, "ma", wiek, "lat. odpowiedział/ła na następny pytania:")
+
+for i in range (len(pytania)):
+    print(pytania[i])
+    print(odpowiedzi[i])
+print("_________________________________________________________________")
+
+
 # 2. Twoim zadaniem jest przygotowanie uniwersalnego i profesjonalnego życiorysu, złożonego z 5-ciu zdań, które wyświetlisz na ekranie
 # Użytkownik wpisuje tylko swoje imie, nazwisko, wiek, zawód, miejsce urodzenia, zainteresowania i ... życiorys jest gotowy.
+
+print("Zadanie dodatkowe 2")
+print("Wprowadż imie")
+imie = input()
+print("Wprowadż nazwisko")
+nazwisko = input()
+print("Wprowadż wiek")
+wiek = int(input())
+print("Jaki masz zawód?")
+zawod = input()
+print("Gdzie jest miejsce urodzenia?")
+urodzenie = input()
+print("Jakie masz zainteresowania?")
+interes = input()
+print(imie, nazwisko, "ma", wiek, "lat. Z zawodu jest", zawod,"Lubie", interes)
+print("_______________________________________________________")
+
+
 # 3. Przygotuj dla dziecka, które uczy się czytać zestaw sylab do nauki, ale zrób to inteligentnie tj.
 # dziecko wpisuje na klawiaturze 1 spółgłoskę a Ty dodajesz do niej odpowiednie samogłoski i wyświetlasz całość na ekranie
+print("Zadanie 3")
+samogloski = ["a","ą","e","ę","i","o","ó","u","y"]
+
+print("Wprowadź spółgłoskę")
+sp = input()
+
+if sp not in samogloski and sp.isalpha():
+    for a in samogloski:
+        print(sp+a)
+else:
+    print("Bląd")
+print("_________________________________________")
+
 # 4. Użytkownik podaje imie, sprawdź czy to imie to Janusz lub Grażyna
+print("Zadanie 4")
+print("Wprowadź imie")
+imie = input()
+list = ["Janusz","Grażyna"]
+if imie in list:
+    print("Dzień dobry ",imie)
+else:
+    print("Niestety nie jesteś Janusz lub Grażyna")
